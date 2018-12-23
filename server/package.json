@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "test"
   },
   "keywords": [
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/FrisoDenijs/MEANjs-ToDo/issues"
   },
-  "homepage": "https://github.com/FrisoDenijs/MEANjs-ToDo#readme"
+  "homepage": "https://github.com/FrisoDenijs/MEANjs-ToDo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0"
+  }
 }
