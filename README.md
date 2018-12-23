@@ -11,3 +11,7 @@ Javascript version of MEAN
 
 ## Commands
 run mongo locally: `mongod -dbpath db/data`
+
+## Deprecation issues
+### Mongoose
+- https://github.com/Automattic/mongoose/issues/6667

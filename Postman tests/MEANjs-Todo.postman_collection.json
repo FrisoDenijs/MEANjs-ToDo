@@ -113,20 +113,35 @@
 					"raw": "{\n\t\"done\": true\n}"
 				},
 				"url": {
-					"raw": "{{baseurl}}/{{todo_api}}/{{todo_detail_id}}/update",
+					"raw": "{{baseurl}}/{{todo_api}}/{{todo_detail_id}}",
 					"host": [
 						"{{baseurl}}"
 					],
 					"path": [
 						"{{todo_api}}",
-						"{{todo_detail_id}}",
-						"update"
+						"{{todo_detail_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/{{todo_api}}/{{todo_detail_id}}",
+					"host": [
+						"{{baseurl}}"
 					],
-					"query": [
-						{
-							"key": "",
-							"value": ""
-						}
+					"path": [
+						"{{todo_api}}",
+						"{{todo_detail_id}}"
 					]
 				}
 			},

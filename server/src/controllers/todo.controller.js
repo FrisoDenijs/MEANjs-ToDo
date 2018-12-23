@@ -34,3 +34,10 @@ exports.todo_update = function (req, res) {
         res.status(200).send(todo);
     });
 };
+
+exports.todo_delete = function (req, res) {
+    Todo.findByIdAndRemove(req.params.id, function (err) {
+        if (err) return next(err);
+        res.status(204);
+    })
+};
