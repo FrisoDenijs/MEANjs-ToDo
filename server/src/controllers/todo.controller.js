@@ -31,7 +31,10 @@ exports.todo_details = function (req, res) {
 exports.todo_update = function (req, res) {
     Todo.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, todo) {
         if (err) return next(err);
-        res.status(200).send(todo);
+        // res.send(todo) doesn't return updated entity, 
+        // so only returning statuscode 202 to show its been accepted, but still processing
+        // see: https://restfulapi.net/http-status-202-accepted/
+        res.status(202);
     });
 };
 
