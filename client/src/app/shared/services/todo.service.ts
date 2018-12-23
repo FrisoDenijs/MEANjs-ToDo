@@ -15,5 +15,19 @@ export class TodoService {
     return this.http.post(this.baseUrl, todo);
   }
 
+  details(id: string) {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
 
+  list() {
+    return this.http.get(this.baseUrl);
+  }
+
+  update(todo: Todo) {
+    return this.http.put(`${this.baseUrl}/${todo._id}`, todo);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
 }
