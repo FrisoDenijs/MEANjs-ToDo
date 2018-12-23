@@ -7,3 +7,7 @@ Javascript version of MEAN
 - https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d
 - https://expressjs.com/en/guide/database-integration.html#mongodb
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
+
+
+## Commands
+run mongo locally: `mongod -dbpath db/data`
