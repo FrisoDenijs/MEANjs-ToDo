@@ -9,4 +9,5 @@ const todo_controller = require('../controllers/todo.controller');
 router.get('/test', todo_controller.test);
 router.post('/', todo_controller.todo_create);
 router.get('/:id', todo_controller.todo_details);
+router.put('/:id/update', todo_controller.todo_update);
 module.exports = router;

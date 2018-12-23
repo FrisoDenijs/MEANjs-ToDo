@@ -2,7 +2,7 @@ const Todo = require('../models/todo.model');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
-    res.send('Greetings from the Test controller!');
+    res.send('Greetings from the Todo controller!');
 };
 
 exports.todo_create = function (req, res) {
@@ -13,17 +13,24 @@ exports.todo_create = function (req, res) {
         }
     );
 
-    todo.save(function (err, result) {
+    todo.save(function (err, todo) {
         if (err) {
             return next(err);
         }
-        res.send(200, result);
+        res.status(200).send(todo);
     })
 };
 
 exports.todo_details = function (req, res) {
     Todo.findById(req.params.id, function (err, todo) {
         if (err) return next(err);
-        res.send(200, todo);
+        res.status(200).send(todo);
     })
 }
+
+exports.todo_update = function (req, res) {
+    Todo.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, todo) {
+        if (err) return next(err);
+        res.status(200).send(todo);
+    });
+};
