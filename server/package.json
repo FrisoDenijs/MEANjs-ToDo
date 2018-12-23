@@ -1,0 +1,20 @@
+{
+  "name": "meanjs-todo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "mean",
+    "js",
+    "todo",
+    "server"
+  ],
+  "author": "Friso Denijs",
+  "bugs": {
+    "url": "https://github.com/FrisoDenijs/MEANjs-ToDo/issues"
+  },
+  "homepage": "https://github.com/FrisoDenijs/MEANjs-ToDo#readme"
+}
