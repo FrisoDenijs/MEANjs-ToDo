@@ -28,7 +28,7 @@
 			"response": []
 		},
 		{
-			"name": "Post Todo",
+			"name": "Create Todo",
 			"event": [
 				{
 					"listen": "test",
@@ -91,6 +91,42 @@
 					"path": [
 						"{{todo_api}}",
 						"{{todo_detail_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"done\": true\n}"
+				},
+				"url": {
+					"raw": "{{baseurl}}/{{todo_api}}/{{todo_detail_id}}/update",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"{{todo_api}}",
+						"{{todo_detail_id}}",
+						"update"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
 					]
 				}
 			},
