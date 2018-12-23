@@ -34,13 +34,13 @@ exports.todo_update = function (req, res) {
         // res.send(todo) doesn't return updated entity, 
         // so only returning statuscode 202 to show its been accepted, but still processing
         // see: https://restfulapi.net/http-status-202-accepted/
-        res.status(202);
+        res.status(202).send();
     });
 };
 
 exports.todo_delete = function (req, res) {
     Todo.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
-        res.status(204);
+        res.status(204).send();
     })
 };
