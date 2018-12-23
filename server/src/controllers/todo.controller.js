@@ -20,3 +20,10 @@ exports.todo_create = function (req, res) {
         res.send(200, result);
     })
 };
+
+exports.todo_details = function (req, res) {
+    Todo.findById(req.params.id, function (err, todo) {
+        if (err) return next(err);
+        res.send(200, todo);
+    })
+}

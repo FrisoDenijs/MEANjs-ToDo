@@ -29,6 +29,19 @@
 		},
 		{
 			"name": "Post Todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3f7d47a-650d-4bee-9ba3-8b751c906510",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"todo_detail_id\", jsonData._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -56,6 +69,28 @@
 					],
 					"path": [
 						"{{todo_api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/{{todo_api}}/{{todo_detail_id}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"{{todo_api}}",
+						"{{todo_detail_id}}"
 					]
 				}
 			},
