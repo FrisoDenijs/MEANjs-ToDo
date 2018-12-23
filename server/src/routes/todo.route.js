@@ -11,4 +11,5 @@ router.post('/', todo_controller.todo_create);
 router.get('/:id', todo_controller.todo_details);
 router.put('/:id', todo_controller.todo_update);
 router.delete('/:id', todo_controller.todo_delete);
+router.get('/', todo_controller.todo_list);
 module.exports = router;

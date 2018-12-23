@@ -41,6 +41,13 @@ exports.todo_update = function (req, res) {
 exports.todo_delete = function (req, res) {
     Todo.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
-        res.status(204).send();
+        res.status(202).send();
     })
 };
+
+exports.todo_list = function (req, res) {
+    Todo.find(function (err, todos){
+        if (err) return next(err);
+        res.status(200).send(todos);
+    })
+}
