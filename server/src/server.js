@@ -23,6 +23,8 @@ app.use('/todo', todoRoute);
 
 let port = 1234;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
 });
+
+module.exports = server;
