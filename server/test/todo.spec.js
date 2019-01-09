@@ -1,3 +1,6 @@
+process.env.port = 3001;
+process.env.MONGODB_URI = 'mongodb://localhost:27017/TODOjs-local-test';
+
 let mongoose = require("mongoose");
 let Todo = require('../src/models/todo.model');
 
@@ -37,7 +40,10 @@ describe('Todos', () => {
             .send(postBody)
             .end((err, res) => {
                 res.should.have.status(200);
-                // res.body.should.be.a('object');
+                res.body.should.be.a('object');
+                res.body.should.have.property('description').eql(postBody.description);
+                res.body.should.have.property('done').eql(false);
+                res.body.should.have.property('_id');
             });
             done();
     });

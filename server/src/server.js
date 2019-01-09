@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/todo', todoRoute);
 
-let port = 1234;
+let port = process.env.port || 1234;
 
 const server = app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
