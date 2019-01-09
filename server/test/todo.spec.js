@@ -8,18 +8,16 @@ let server = require('../src/server');
 let should = chai.should();
 
 chai.use(chaiHttp);
-//Our parent block
+
 describe('Todos', () => {
     beforeEach((done) => { //Before each test we empty the database
         Todo.remove({}, (err) => { 
            done();           
         });        
     });
-/*
-  * Test the /GET route
-  */
-  describe('/GET empty todos', () => {
-      it('it should GET all the books', (done) => {
+
+  describe('GET empty todos', () => {
+      it('should GET all the books', (done) => {
         chai.request(server)
             .get('/todo')
             .end((err, res) => {
@@ -29,6 +27,20 @@ describe('Todos', () => {
               done();
             });
       });
+  });
+
+  describe('POST todo', () => {
+    const postBody = { description: 'TestMessage'}
+    it('should return a todo object', (done) => {
+        chai.request(server)
+            .post('/todo')
+            .send(postBody)
+            .end((err, res) => {
+                res.should.have.status(200);
+                // res.body.should.be.a('object');
+            });
+            done();
+    });
   });
 
 });
