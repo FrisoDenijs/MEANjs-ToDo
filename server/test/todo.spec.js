@@ -20,7 +20,7 @@ describe('Todos', () => {
     });
 
   describe('GET empty todos', () => {
-      it('should GET all the books', (done) => {
+      it('should GET all the todos', (done) => {
         chai.request(server)
             .get('/todo')
             .end((err, res) => {
